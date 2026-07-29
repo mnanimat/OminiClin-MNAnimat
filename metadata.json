@@ -1,0 +1,6 @@
+{
+  "name": "OminiClin MNAnimat - Rotina Clínica Multidisciplinar",
+  "description": "Sistema local e web OminiClin MNAnimat para gestão clínica de Médicos, Dentistas e Nutricionistas com IA Gemini, Odontograma, Antropometria, Conformidade LGPD/MIT e suporte a Windows e Android.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
