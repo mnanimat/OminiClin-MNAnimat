@@ -2,16 +2,11 @@ name = "omniclin-app"
 compatibility_date = "2026-01-01"
 pages_build_output_dir = "dist"
 
+[assets]
+directory = "./dist"
+
 [vars]
 ENVIRONMENT = "production"
 SYSTEM_AUTHOR = "Micael Nildo Oliveira Souza"
 LICENSE_TYPE = "MIT"
 LGPD_COMPLIANT = "true"
-
-[[headers]]
-for = "/*"
-[headers.values]
-X-Frame-Options = "SAMEORIGIN"
-X-Content-Type-Options = "nosniff"
-Referrer-Policy = "strict-origin-when-cross-origin"
-Permissions-Policy = "geolocation=(), microphone=(), camera=()"
