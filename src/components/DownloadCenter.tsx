@@ -141,7 +141,7 @@ export const DownloadCenter: React.FC = () => {
           </button>
         </div>
 
-        {/* Cloudflare Pages Card */}
+        {/* Cloudflare Pages & GitHub Pages Card */}
         <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between space-y-4">
           <div className="space-y-3">
             <div className="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-950/80 text-amber-600 dark:text-amber-300 flex items-center justify-center">
@@ -150,31 +150,31 @@ export const DownloadCenter: React.FC = () => {
 
             <div>
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-                Hospedagem Cloudflare Pages
+                Hospedagem GitHub Pages & Cloudflare Pages
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                Configuração para publicar o sistema no Cloudflare com SSL gratuito, roteamento e cabeçalhos de segurança (CSP & LGPD).
+                Totalmente otimizado para publicar online no GitHub Pages ou Cloudflare Pages com HTTPS, roteamento SPA e segurança LGPD.
               </p>
             </div>
 
             <ul className="space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
               <li className="flex items-center space-x-2">
                 <CheckCircle2 className="w-4 h-4 text-amber-500 shrink-0" />
-                <span>Arquivo <code className="font-mono">_headers</code> com regras CSP</span>
+                <span>Base relativa (<code className="font-mono">base: './'</code>) configurada no Vite</span>
               </li>
               <li className="flex items-center space-x-2">
                 <CheckCircle2 className="w-4 h-4 text-amber-500 shrink-0" />
-                <span>Arquivo <code className="font-mono">wrangler.toml</code> incluído</span>
+                <span>Arquivos <code className="font-mono">.nojekyll</code>, <code className="font-mono">404.html</code> e <code className="font-mono">_redirects</code> incluídos</span>
               </li>
               <li className="flex items-center space-x-2">
                 <CheckCircle2 className="w-4 h-4 text-amber-500 shrink-0" />
-                <span>Proteção contra ataques DDoS e SSL automático</span>
+                <span>SSL/HTTPS automático e proteção DDoS nativa</span>
               </li>
             </ul>
           </div>
 
           <div className="p-3 bg-amber-50 dark:bg-amber-950/60 rounded-xl border border-amber-200 dark:border-amber-800 text-[11px] text-amber-800 dark:text-amber-200 font-medium text-center">
-            Pronto para Deploy com 1 clique no GitHub / Cloudflare Pages
+            Pronto para Deploy Direto no GitHub Pages ou Cloudflare
           </div>
         </div>
       </div>
@@ -183,38 +183,46 @@ export const DownloadCenter: React.FC = () => {
       <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-4">
         <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
           <Server className="w-5 h-5 text-teal-600" />
-          <span>Como Publicar no Cloudflare Pages de Acordo com a Lei Brasileira</span>
+          <span>Como Publicar no GitHub Pages e Cloudflare Pages</span>
         </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-          <div className="p-4 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 space-y-2">
-            <span className="w-6 h-6 rounded-full bg-teal-600 text-white font-bold flex items-center justify-center text-xs">
-              1
-            </span>
-            <h4 className="font-bold text-slate-900 dark:text-white">Conectar ao GitHub</h4>
-            <p className="text-slate-500 dark:text-slate-400">
-              Faça o envio deste código para um repositório público ou privado no GitHub contendo a licença MIT.
-            </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+          {/* GitHub Pages Instructions */}
+          <div className="p-4 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 space-y-3">
+            <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-2">
+              <h4 className="font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1.5">
+                <FileCode className="w-4 h-4" />
+                <span>GitHub Pages</span>
+              </h4>
+              <span className="text-[10px] bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded font-semibold">
+                Grátis
+              </span>
+            </div>
+            <ol className="list-decimal list-inside space-y-1.5 text-slate-600 dark:text-slate-300 leading-relaxed">
+              <li>Suba o projeto para um repositório (público ou privado) no GitHub.</li>
+              <li>Acesse <strong>Settings &gt; Pages</strong> no repositório.</li>
+              <li>Em <strong>Source</strong>, escolha <em>GitHub Actions</em> ou selecione a branch <code className="font-mono">main</code> / pasta <code className="font-mono">docs</code> / <code className="font-mono">gh-pages</code>.</li>
+              <li>O arquivo <code className="font-mono">.nojekyll</code> e o <code className="font-mono">404.html</code> garantem que todas as páginas e rotas recarreguem perfeitamente!</li>
+            </ol>
           </div>
 
-          <div className="p-4 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 space-y-2">
-            <span className="w-6 h-6 rounded-full bg-teal-600 text-white font-bold flex items-center justify-center text-xs">
-              2
-            </span>
-            <h4 className="font-bold text-slate-900 dark:text-white">Criar Projeto no Cloudflare</h4>
-            <p className="text-slate-500 dark:text-slate-400">
-              Acesse o dashboard do Cloudflare Pages, selecione "Create a project" e selecione a pasta de saída <code className="font-mono">dist</code>.
-            </p>
-          </div>
-
-          <div className="p-4 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 space-y-2">
-            <span className="w-6 h-6 rounded-full bg-teal-600 text-white font-bold flex items-center justify-center text-xs">
-              3
-            </span>
-            <h4 className="font-bold text-slate-900 dark:text-white">Adicionar Secret GEMINI_API_KEY</h4>
-            <p className="text-slate-500 dark:text-slate-400">
-              Nas configurações de variáveis de ambiente do Cloudflare, adicione a chave <code className="font-mono">GEMINI_API_KEY</code> para ativar a IA em nuvem.
-            </p>
+          {/* Cloudflare Pages Instructions */}
+          <div className="p-4 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 space-y-3">
+            <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-2">
+              <h4 className="font-bold text-orange-600 dark:text-orange-400 flex items-center gap-1.5">
+                <Cloud className="w-4 h-4" />
+                <span>Cloudflare Pages</span>
+              </h4>
+              <span className="text-[10px] bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-300 px-2 py-0.5 rounded font-semibold">
+                Alta Performance
+              </span>
+            </div>
+            <ol className="list-decimal list-inside space-y-1.5 text-slate-600 dark:text-slate-300 leading-relaxed">
+              <li>Acesse seu painel Cloudflare e vá em <strong>Workers &amp; Pages &gt; Create application &gt; Pages</strong>.</li>
+              <li>Conecte sua conta do GitHub e escolha o repositório deste projeto.</li>
+              <li>Defina o comando de build como <code className="font-mono">npm run build</code> e a pasta de saída como <code className="font-mono">dist</code>.</li>
+              <li>O arquivo <code className="font-mono">_redirects</code> trata o roteamento SPA e os cabeçalhos de segurança garantem proteção total.</li>
+            </ol>
           </div>
         </div>
       </div>
